@@ -19,6 +19,9 @@ export default {
   ],
   valid: [
     {
+      code: 'foo()',
+    },
+    {
       // Not a Zod schema
       code: 'b.object()',
     },

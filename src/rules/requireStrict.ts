@@ -1,7 +1,7 @@
 const create = (context) => {
   return {
     CallExpression (node) {
-      if (node.callee.object.name !== 'z') {
+      if (node.callee.object?.name !== 'z') {
         return;
       }
 
