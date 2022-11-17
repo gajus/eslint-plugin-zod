@@ -1,0 +1,50 @@
+{
+  "author": {
+    "email": "gajus@gajus.com",
+    "name": "Gajus Kuizinas",
+    "url": "http://gajus.com"
+  },
+  "description": "Zod linting rules for ESLint.",
+  "devDependencies": {
+    "@semantic-release/commit-analyzer": "^9.0.2",
+    "@semantic-release/github": "^8.0.6",
+    "@semantic-release/npm": "^9.0.1",
+    "@types/mocha": "^10.0.0",
+    "@types/node": "^18.11.9",
+    "eslint": "^8.27.0",
+    "eslint-config-canonical": "37.0.3",
+    "gitdown": "^3.1.5",
+    "glob": "^8.0.3",
+    "lodash": "^4.17.21",
+    "mocha": "^10.1.0",
+    "semantic-release": "^19.0.5",
+    "tsx": "^3.12.1",
+    "typescript": "^4.9.3"
+  },
+  "engines": {
+    "node": ">=12"
+  },
+  "keywords": [
+    "eslint",
+    "plugin",
+    "zod"
+  ],
+  "license": "BSD-3-Clause",
+  "main": "./dist/src/index.js",
+  "name": "eslint-plugin-zod",
+  "peerDependencies": {
+    "eslint": ">=8.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gajus/eslint-plugin-zod"
+  },
+  "scripts": {
+    "build": "npm run documentation && tsc",
+    "documentation": "gitdown ./.README/README.md --output-file ./README.md && npm run documentation-add-assertions",
+    "documentation-add-assertions": "tsx ./bin/readmeAssertions",
+    "lint": "eslint ./src ./test && tsc --noEmit",
+    "test": "mocha --require tsx test/**/*"
+  },
+  "version": "0.0.0-development"
+}

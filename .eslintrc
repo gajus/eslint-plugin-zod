@@ -1,0 +1,13 @@
+{
+  "extends": [
+    "canonical",
+    "canonical/typescript"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "no-template-curly-in-string": 0
+  },
+  "root": true
+}

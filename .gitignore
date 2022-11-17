@@ -1,0 +1,12 @@
+node_modules
+coverage
+dist
+*.log
+.*
+!.babelrc
+!.eslintrc
+!.github
+!.gitignore
+!.npmignore
+!.README
+!.releaserc
