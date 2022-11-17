@@ -12,6 +12,7 @@
     * [Installation](#user-content-eslint-plugin-zod-installation)
     * [Configuration](#user-content-eslint-plugin-zod-configuration)
     * [Rules](#user-content-eslint-plugin-zod-rules)
+        * [`prefer-enum`](#user-content-eslint-plugin-zod-rules-prefer-enum)
         * [`require-strict`](#user-content-eslint-plugin-zod-rules-require-strict)
 
 
@@ -44,9 +45,8 @@ npm install eslint-plugin-zod --save-dev
     "zod"
   ],
   "rules": {
-    "zod/require-strict": [
-      2,
-    ],
+    "zod/prefer-enum": 2,
+    "zod/require-strict": 2
   }
 }
 
@@ -57,6 +57,16 @@ npm install eslint-plugin-zod --save-dev
 ## Rules
 
 <!-- Rules are sorted alphabetically. -->
+
+<a name="user-content-eslint-plugin-zod-rules-prefer-enum"></a>
+<a name="eslint-plugin-zod-rules-prefer-enum"></a>
+### <code>prefer-enum</code>
+
+_The `--fix` option on the command line automatically fixes problems reported by this rule._
+
+Prefers `z.enum` over a union of literals.
+
+
 
 <a name="user-content-eslint-plugin-zod-rules-require-strict"></a>
 <a name="eslint-plugin-zod-rules-require-strict"></a>
