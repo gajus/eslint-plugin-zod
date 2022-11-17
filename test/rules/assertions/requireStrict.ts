@@ -32,5 +32,9 @@ export default {
     {
       code: 'z.object().merge().strict()',
     },
+    {
+      // Ignore .and() calls
+      code: 'z.object().and()',
+    },
   ],
 };

@@ -17,6 +17,8 @@ const create = (context) => {
           message: 'Add a strict() call to the schema.',
           node,
         });
+      } else if (node.parent?.property?.name === 'and') {
+        // Ignore .and() calls
       } else if (
         // z.object().strict()
         node.parent?.property?.name !== 'strict' &&
