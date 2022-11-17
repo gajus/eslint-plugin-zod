@@ -7,6 +7,7 @@ export default {
           message: 'Add a strict() call to the schema.',
         },
       ],
+      output: 'z.object().strict()',
     },
     {
       code: 'z.object().passthrough()',

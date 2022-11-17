@@ -9,7 +9,17 @@ const create = (context) => {
         return;
       }
 
-      if (node.parent.property?.name !== 'strict') {
+      if (!node.parent.property) {
+        context.report({
+          fix: (fixer) => {
+            return fixer.insertTextAfter(node, '.strict()');
+          },
+          message: 'Add a strict() call to the schema.',
+          node,
+        });
+      } else if (node.parent.property?.name !== 'strict') {
+        // As far as I can think, in cases where the property name is not-strict,
+        // e.g. passthrough, we should not add a strict() call.
         context.report({
           message: 'Add a strict() call to the schema.',
           node,
