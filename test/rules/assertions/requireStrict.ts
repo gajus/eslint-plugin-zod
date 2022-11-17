@@ -29,5 +29,8 @@ export default {
     {
       code: 'z.object().strict()',
     },
+    {
+      code: 'z.object().merge().strict()',
+    },
   ],
 };

@@ -17,7 +17,12 @@ const create = (context) => {
           message: 'Add a strict() call to the schema.',
           node,
         });
-      } else if (node.parent.property?.name !== 'strict') {
+      } else if (
+        // z.object().strict()
+        node.parent?.property?.name !== 'strict' &&
+        // z.object().merge().strict()
+        node.parent?.parent?.parent?.property?.name !== 'strict'
+      ) {
         // As far as I can think, in cases where the property name is not-strict,
         // e.g. passthrough, we should not add a strict() call.
         context.report({
