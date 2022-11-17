@@ -66,5 +66,13 @@ _The `--fix` option on the command line automatically fixes problems reported by
 
 Requires that objects are initialized with `.strict()`.
 
+<a name="user-content-eslint-plugin-zod-rules-require-strict-options"></a>
+<a name="eslint-plugin-zod-rules-require-strict-options"></a>
+#### Options
+
+|configuration|format|default|description|
+|---|---|---|---|
+|`allowPassthrough`|boolean|`true`|Ignores objects explicitly set to `allowPassthrough()`.|
+
 
 

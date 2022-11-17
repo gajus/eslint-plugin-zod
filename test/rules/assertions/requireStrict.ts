@@ -16,6 +16,11 @@ export default {
           message: 'Add a strict() call to the schema.',
         },
       ],
+      options: [
+        {
+          allowPassthrough: false,
+        },
+      ],
     },
   ],
   valid: [
@@ -35,6 +40,17 @@ export default {
     {
       // Ignore .and() calls
       code: 'z.object().and()',
+    },
+    {
+      code: 'z.object().passthrough()',
+    },
+    {
+      code: 'z.object().passthrough()',
+      options: [
+        {
+          allowPassthrough: true,
+        },
+      ],
     },
   ],
 };

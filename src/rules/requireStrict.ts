@@ -1,3 +1,7 @@
+const defaultOptions = {
+  allowPassthrough: true,
+};
+
 const create = (context) => {
   return {
     CallExpression (node) {
@@ -9,6 +13,10 @@ const create = (context) => {
         return;
       }
 
+      const {
+        allowPassthrough,
+      } = context.options[0] ?? defaultOptions;
+
       if (!node.parent.property) {
         context.report({
           fix: (fixer) => {
@@ -17,14 +25,21 @@ const create = (context) => {
           message: 'Add a strict() call to the schema.',
           node,
         });
-      } else if (node.parent?.property?.name === 'and') {
-        // Ignore .and() calls
       } else if (
         // z.object().strict()
         node.parent?.property?.name !== 'strict' &&
         // z.object().merge().strict()
         node.parent?.parent?.parent?.property?.name !== 'strict'
       ) {
+        if (node.parent?.property?.name === 'passthrough' && allowPassthrough) {
+          return;
+        }
+
+        if (node.parent?.property?.name === 'and') {
+          // Ignore .and() calls
+          return;
+        }
+
         // As far as I can think, in cases where the property name is not-strict,
         // e.g. passthrough, we should not add a strict() call.
         context.report({
@@ -47,7 +62,12 @@ export = {
     schema: [
       {
         additionalProperties: false,
-        properties: {},
+        properties: {
+          allowPassthrough: {
+            default: true,
+            type: 'boolean',
+          },
+        },
         type: 'object',
       },
     ],
