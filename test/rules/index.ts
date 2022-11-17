@@ -16,6 +16,7 @@ const ruleTester = new RuleTester({
 });
 
 const reportingRules = [
+  'prefer-enum',
   'require-strict',
 ];
 

@@ -33,9 +33,8 @@ npm install eslint-plugin-zod --save-dev
     "zod"
   ],
   "rules": {
-    "zod/require-strict": [
-      2,
-    ],
+    "zod/prefer-enum": 2,
+    "zod/require-strict": 2
   }
 }
 
@@ -45,4 +44,5 @@ npm install eslint-plugin-zod --save-dev
 
 <!-- Rules are sorted alphabetically. -->
 
+{"gitdown": "include", "file": "./rules/prefer-enum.md"}
 {"gitdown": "include", "file": "./rules/require-strict.md"}
