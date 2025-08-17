@@ -18,6 +18,7 @@ const ruleTester = new RuleTester({
 const reportingRules = [
   'prefer-enum',
   'require-strict',
+  'no-any',
 ];
 
 for (const ruleName of reportingRules) {
