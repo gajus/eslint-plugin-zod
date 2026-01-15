@@ -6,6 +6,13 @@
 [![NPM version](http://img.shields.io/npm/v/eslint-plugin-zod.svg?style=flat-square)](https://www.npmjs.org/package/eslint-plugin-zod)
 [![Twitter Follow](https://img.shields.io/twitter/follow/kuizinas.svg?style=social&label=Follow)](https://twitter.com/kuizinas)
 
+> [!WARNING]
+> The source code of `eslint-plugin-zod` now resides here:
+> https://github.com/marcalexiei/eslint-plugin-zod
+>
+> For additional context, see [Takeover of eslint-plugin-zod](https://github.com/marcalexiei/eslint-plugin-zod/issues/171).
+
+
 [Zod](https://github.com/colinhacks/zod) linting rules for ESLint.
 
 * [eslint-plugin-zod](#user-content-eslint-plugin-zod)
